@@ -1,0 +1,66 @@
+<section class="profile-card" id="profile-card">
+
+
+    <img id="profile-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_vIj2V-KO5sDYPu71xxPorJXWX_FX7BzWww&usqp=CAU" />
+
+    <h1>{{solicitud.empleado.nombre}} {{solicitud.empleado.apellidos}}</h1>
+    <div class="card" style="background-color: #f8f9fa;">
+        <div class="card-body">
+            <h6 class="card-title text-center" style="color: #818ea2;">Días de vacaciones solicitados</h6>
+            <nav>
+
+                <ul>
+                    <li>
+                        <p style="float: left;">{{fechas.mes}} {{fechas.anio}}</p>
+                    </li>
+
+                    <li class="ms-2" *ngFor="let dia of dias; let i=index">
+                        <p class="social-media-icon" style="color: white;">{{dia}}</p>
+                    </li>
+                    <div *ngIf="band_anio">
+                        <li>
+                            <p style="float: left;">{{fechas.mes2}} {{fechas.anio2}}</p>
+                        </li>
+                        <li class="ms-2" *ngFor="let dia2 of dias2">
+                            <p class="social-media-icon" style="color: white;">{{dia2}}</p>
+                        </li>
+                    </div>
+
+                    <div *ngIf="band">
+                        <li>
+                            <p style="float: left;">{{fechas.mes2}} {{fechas.anio}}</p>
+                        </li>
+                        <li class="ms-2" *ngFor="let dia2 of dias2">
+                            <p class="social-media-icon" style="color: white;">{{dia2}}</p>
+                        </li>
+                    </div>
+
+
+                </ul>
+
+                <h6 class="card-title text-center" style="color: #818ea2;">Justificacion</h6>
+                <p class="fs-6">{{solicitud.justificacion}} </p>
+                <br>
+                <div *ngIf="solicitud.estado === 'PENDIENTE'">
+                    <button type="button" class="btn btn-success mb-5" (click)="enviarMail()">Comentarios Adicionales</button>
+                    <br>
+                    <button type="button" class="btn btn-success" (click)="getEmpleadosVacaciones()">APROBAR</button>
+                    <button type="button" class="btn btn-danger ms-5" (click)="rechazarSolicitud()">RECHAZAR</button> </div>
+
+                <div *ngIf="solicitud.estado === 'ACEPTADO'">
+                    <h6 class="card-title text-center" style="color: #818ea2;">Aceptada Por</h6>
+                    <p class="mb-5">{{solicitud.aprobada_por}}</p>
+                    <p style="width: 100%; color: white; background-color: green;">{{solicitud.estado}}</p>
+                </div>
+                <div *ngIf="solicitud.estado === 'RECHAZADO'">
+                    <h6 class="card-title text-center" style="color: #818ea2;">Denegada Por</h6>
+                    <p> {{solicitud.denegada_por}}</p>
+                    <p style="width: 100%; background-color: red ; color: white;">{{solicitud.estado}}</p>
+                </div>
+
+            </nav>
+
+        </div>
+    </div>
+
+</section>

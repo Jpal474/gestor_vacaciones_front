@@ -1,0 +1,110 @@
+.home {
+    height: 100vh;
+    background-image: url(../../../../assets/recursos/imagenes/general/login/fondo_playa.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card {
+    height: auto;
+    width: 80vw;
+    border: 2px solid rgba(255, 255, 255, .5);
+    position: relative;
+    margin: -25px 0 0 -25px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 0 5px #fadbb9;
+    left: 10%
+}
+
+.input-box {
+    position: relative;
+    width: 40%;
+    height: 50px;
+    border-bottom: 2px solid #fadbb9;
+    margin: 30px 0;
+}
+
+.img-small {
+    width: 20px;
+    height: 20px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    font-weight: 1rem;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #d49d11;
+    line-height: 57px;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #00aec1;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+@media screen and (max-width:700px) {
+    .card {
+        left: 3%;
+    }
+    .text-danger {
+        margin-bottom: 20%;
+        font-size: 0.55rem;
+    }
+    .input-box {
+        width: 60%;
+    }
+    .input-box label {
+        font-size: small;
+    }
+    .home {
+        overflow-x: hidden;
+    }
+    .btn {
+        margin-top: 10%;
+    }
+    #confirmar {
+        margin-top: 10%;
+    }
+    .img-small {
+        width: 12px;
+        height: 12px;
+    }
+}

@@ -1,0 +1,44 @@
+<h1 class="text-center titulo"> Crear Solicitud </h1>
+
+<div class="alert alert-warning mb-5" role="alert">
+    Tienes: {{saldo_vacacional.dias_disponibles}} días disponibles
+</div>
+
+<a class="link" [routerLink]="['/admin/mis_solicitudes']"> <img src="../../../../assets/recursos/imagenes/general/regresar.svg" class="regresar"> Regresar</a>
+<div class="container ms-5 mt-5">
+    <div class="card mt-5">
+        <div class="card-body">
+            <h5 class="card-title text-center">Datos de la Solicitud</h5>
+            <br>
+            <form autocomplete="off" [formGroup]="solicitud_formulario">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="input-box ms-5">
+                            <input type="date" class="form-control shadow-none" formControlName="fecha_inicio" [class.is-invalid]="fechaInicioNoValida" [max]="max_date" [min]="min_date">
+                            <label>Fecha Inicio<span>*</span></label>
+                            <small *ngIf="fechaInicioNoValida" class="text-danger"><p> {{fechaInicioNoValida}} </p></small>
+                        </div>
+                        <div class="input-box ms-5">
+                            <input type="date" class="form-control shadow-none" formControlName="fecha_fin" [class.is-invalid]="fechaFinNoValida" [max]="max_date" [min]="min_date">
+                            <label>Fecha Fin<span>*</span></label>
+                            <small *ngIf="fechaFinNoValida" class="text-danger">{{fechaFinNoValida}}</small>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <a class="btn btn-primary text-center w-50 mb-3" (click)="crearSolicitudPorDias()"> Seleccionar x Días</a>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" formControlName="justificacion" [class.is-invalid]="justificacionNoValida"></textarea>
+                            <label for="floatingTextarea2">Justificacion</label>
+                            <small *ngIf="justificacionNoValida" class="text-danger">Rango máximo de carácteres alcaznado</small>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-5" (click)="crearSolicitud()">Crear</button>
+            </form>
+        </div>
+    </div>

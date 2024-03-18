@@ -1,0 +1,7 @@
+.home {
+    height: 115vh;
+    background-image: url(../../../../assets/recursos/imagenes/general/login/fondo_playa.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}

@@ -1,0 +1,89 @@
+.row {
+    display: flex;
+    justify-content: center;
+    /* Horizontal centering */
+    align-items: center;
+    /* Vertical centering */
+    text-align: center;
+    background-color: transparent;
+    width: 70vw;
+    height: 35vh;
+    position: relative;
+    margin: -25px 0 0 -25px;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
+}
+
+.card {
+    background-color: #27a082;
+    color: white;
+    width: 9.5rem;
+    display: inline-block;
+    /* Make the card inline-block to center it */
+    padding: 10px;
+    /* Add padding or adjust as needed */
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
+}
+
+.col img {
+    width: 100px;
+    height: 100px;
+}
+
+@media screen and (max-width:500px) {
+    .home {
+        height: 155vh;
+    }
+    .card {
+        width: 6.5rem;
+        margin-bottom: 10px;
+    }
+    .col img {
+        width: 50px;
+        height: 50px;
+    }
+    .row {
+        height: 55vh;
+        width: 85vw;
+    }
+}
+
+@media screen and (max-width:700px) and (min-width:501px) {
+    .row {
+        width: 85vw;
+        height: 65vh;
+    }
+    .card {
+        width: 10rem;
+        font-size: small;
+        margin-top: 8px;
+    }
+    .col img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width:1000px) and (min-width:701px) {
+    .row {
+        width: 85vw;
+        height: 45vh;
+    }
+    .card {
+        width: 10rem;
+        font-size: small;
+        margin-top: 8px;
+    }
+    .col img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width:2500px) and (min-width:1400px) {
+    .card {
+        margin-bottom: 10px;
+        width: 13.5rem;
+    }
+}

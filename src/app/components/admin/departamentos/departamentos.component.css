@@ -1,0 +1,29 @@
+.app {
+    width: 100vw;
+    height: 100vh;
+}
+
+.th {
+    background-color: #fadbb9;
+    color: black;
+}
+
+.td {
+    background-color: #8c0b0a;
+}
+
+td {
+    background-color: #00aec1;
+    color: white;
+}
+
+.regresar {
+    width: 30px;
+    height: 30px;
+}
+
+@media screen and (max-width:500px) {
+    .btn {
+        font-size: small;
+    }
+}

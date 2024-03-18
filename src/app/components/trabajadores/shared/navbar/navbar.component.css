@@ -1,0 +1,16 @@
+.navbar {
+    background-color: #27a082;
+    width: auto;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.navbar-toggler {
+    background-color: white;
+}
+
+.nav-item {
+    cursor: pointer;
+}

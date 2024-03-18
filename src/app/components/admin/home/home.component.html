@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<div class="home">
+    <div class="alert alert-warning alert-dismissible fade show mb-5 mt-5" role="alert" *ngIf="vacaciones">
+        El año está por terminar, si no ha tomado sus vacaciones hágalo ahora o las perderá, si ya lo ha hecho, ignore este mensaje
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="row">
+            <div class="col">
+                <a [routerLink]="['/admin/departamentos']">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-center">
+                            <img src="../../../../assets/recursos/imagenes/superadmin/home/departamento.png" class="card-img-top" alt="...">
+                        </div>
+                        <p class="text-center" id="departamentos">Departamentos</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a [routerLink]="['/admin/trabajadores']">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-center">
+                            <img src="../../../../assets/recursos/imagenes/superadmin/home/trabajo-en-equipo.png" class="card-img-top" alt="...">
+                        </div>
+                        <p class="text-center">Trabajadores</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a [routerLink]="['/admin/solicitudes']">
+                    <div class="card">
+                        <p class="solicitudes">{{numero_solicitudes}}</p>
+                        <div class="card-body d-flex justify-content-center">
+                            <img src="../../../../assets/recursos/imagenes/superadmin/home/permiso.png" class="card-img-top" alt="...">
+                        </div>
+                        <p class="text-center">Solicitudes</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a [routerLink]="['/admin/calendario']">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-center">
+                            <img src="../../../../assets/recursos/imagenes/superadmin/home/calendario.png" class="card-img-top" alt="...">
+                        </div>
+                        <p class="text-center">Calendario</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

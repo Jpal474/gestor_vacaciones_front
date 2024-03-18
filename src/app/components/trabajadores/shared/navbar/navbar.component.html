@@ -1,0 +1,45 @@
+<nav class="navbar fixed-top">
+    <div class="container-fluid">
+        <a [routerLink]="['/trabajador/inicio']"><img src="../../../../../assets/recursos/imagenes/superadmin/home/puesta-de-sol.png" class="img-nav"></a>
+        <a class="navbar-brand" [routerLink]="['/trabajador/inicio']">Vacation Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: #27a082; color: white;">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Vacation Manager </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" [routerLink]="['/trabajador/inicio']" style="color: white;"> <img src="../../../../../assets/recursos/imagenes/trabajador/hogar.png" width="10px" height="10px" class="me-1">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" [routerLink]="['/trabajador/crear_solicitud']" style="color: white;">
+                            <img src="../../../../../assets/recursos/imagenes/trabajador/anadir.png" width="10px" height="10px" class="me-1"> Crear Solicitud</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" [routerLink]="['/trabajador/solicitudes']" style="color: white;">
+                            <img src="../../../../../assets/recursos/imagenes/trabajador/permiso.png" width="10px" height="10px" class="me-1"> Mis Solicitudes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/trabajador/calendario']" style="color: white;">
+                            <img src="../../../../../assets/recursos/imagenes/trabajador/calendario.png" width="10px" height="10px" class="me-1"> Calendario
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/trabajador/cuenta']" style="color: white;">
+                            <img src="../../../../../assets/recursos/imagenes/trabajador/usuario(2).png" width="10px" height="10px" class="me-1"> Cuenta
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" (click)="logOut()" style="color: white;">
+                            <img src="../../../../../assets/recursos/imagenes/trabajador/salida.png" width="10px" height="10px" class="me-1"> Cerrar Sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

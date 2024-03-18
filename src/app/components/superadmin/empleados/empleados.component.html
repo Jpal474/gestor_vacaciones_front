@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<h1 class="text-center titulo"> Empleados </h1>
+<div class="d-grid gap-2 col-6 mx-auto justify-content-md-end">
+    <a class="btn btn-success text-white" [routerLink]="['/super/agregar_empleado']">AGREGAR EMPLEADO</a>
+</div>
+<a class="link" [routerLink]="['/super/inicio']"> <img src="../../../../assets/recursos/imagenes/general/regresar.svg" class="regresar"> Regresar</a>
+
+<div class="row justify-content-center pt-5">
+    <div class="col">
+        <div class=" container table-responsive pt-5">
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="th" scope="col">Nombre</th>
+                        <th class="th" scope="col">Departamento</th>
+                        <th class="th" scope="col">Correo</th>
+                        <th class="th" scope="col">Días disponibles/tomados</th>
+                        <th class="th" scope="col">Genero</th>
+                        <th class="th" scope="col">Nombre Usuario</th>
+                        <th class="th" scope="col">Estado</th>
+                        <th class="th" scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let empleado of empleados">
+                        <th scope="row" style="background-color: #00aec1; color: white;">{{empleado.nombre}} {{empleado.apellidos}}</th>
+                        <td *ngIf="empleado.departamento">{{empleado.departamento.nombre | uppercase}}</td>
+                        <td *ngIf="!empleado.departamento">S/D</td>
+                        <td>{{empleado.usuario.correo}}</td>
+                        <td class="text-center">{{empleado.saldo_vacacional?.[0]?.dias_disponibles}}/{{empleado.saldo_vacacional?.[0]?.dias_tomados}}</td>
+                        <td>{{empleado.genero}}</td>
+                        <td>{{empleado.usuario.nombre_usuario}}</td>
+                        <td [ngStyle]="{'background-color': empleado.estado === 'ACTIVO' ? 'green' : (empleado.estado === 'DE VACACIONES' ? 'yellow' : 'red'), 'color': empleado.estado === 'ACTIVO' ? 'white' : (empleado.estado === 'DE VACACIONES' ? 'black' : 'white')}" style="font-size: 0.9rem;">{{empleado.estado}}</td>
+                        <td>
+                            <a type="button" class="btn button text-white one ms-2" [routerLink]="['/super/editar_empleado',empleado.id]">
+                                <img class="img-button" src="../../../../assets/recursos/imagenes/superadmin/generales/lapiz.png">
+                                <span class="tooltip-text-one">Editar</span>
+                            </a>
+                            <a type="button" class="btn button-red text-white one ms-2" (click)="eliminarEmpleado(empleado.usuario.id)">
+                                <img class="img-button" src="../../../../assets/recursos/imagenes/superadmin/generales/eliminar.png">
+                                <span class="tooltip-text-one">Eliminar</span>
+                            </a>
+                            <a type="button" id="boton_estado" class="btn button-red text-white ms-2 one" (click)="cambiarEstado(empleado.id, empleado.estado)">
+                                <img class="img-button" src="../../../../assets/recursos/imagenes/superadmin/generales/change-management.png">
+                                <span class="tooltip-text-one">Cambiar Estado</span>
+                            </a>
+                            <a type="button" class="btn btn-success one ms-2" id="boton_dias" (click)="actualizarDias(empleado.id)">
+                                <img class="img-button" src="../../../../assets/recursos/imagenes/superadmin/generales/anadir.png">
+                                <span class="tooltip-text-one">Añadir Días</span>
+                            </a>
+
+                        </td>
+                    </tr>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center mb-5">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item" *ngFor="let i of paginasArray" routerLinkActive="active">
+                <a class="page-link" [ngStyle]="pagina_actual === i ? {'background-color': '#fadbb9', 'color': 'black'} : {'background-color': '#00aec1', 'color': 'white'}" (click)="getEmpleados(i)">{{i}}</a>
+            </li>
+
+        </ul>
+    </nav>
+</div>

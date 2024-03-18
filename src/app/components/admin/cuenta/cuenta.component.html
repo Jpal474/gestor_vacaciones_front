@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<section class="profile-card" id="profile-card">
+
+    <img id="profile-image" src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" />
+    <div class="container">
+
+    </div>
+
+    <h1>{{empleado.nombre}} {{empleado.apellidos}}</h1>
+
+    <div id="info-box">
+        <p>{{empleado.departamento.nombre}}</p>
+    </div>
+
+    <div class="row justify-content-around">
+        <div class="col-4">
+            <p>Días de Vacaciones Disponibles:</p>
+            <p>{{this.saldo_vacacional.dias_disponibles}}</p>
+        </div>
+        <div class="col-4">
+            <p>Días de Vacaciones Tomados:</p>
+            <p>{{this.saldo_vacacional.dias_tomados}}</p>
+        </div>
+    </div><br>
+    <h3>¿Dudas Sobre tus Vacaciones?</h3>
+    <a href="https://www.dof.gob.mx/nota_detalle.php?codigo=5675889&fecha=27/12/2022#gsc.tab=0" target="_blank">
+        <p>Artículos Actualizados</p>
+    </a>
+    <a href="https://www.gob.mx/cms/uploads/attachment/file/156203/1044_Ley_Federal_del_Trabajo.pdf" target="_blank">
+        <p>Ley Federal del Trabajo</p>
+    </a>
+    <a href="https://www.gob.mx/stps/documentos/las-vacaciones-son-tu-derecho" target="_blank">
+        <p>Dudas Frecuentes</p>
+    </a>
+
+
+    <nav>
+
+        <ul>
+
+
+
+        </ul>
+
+        <button type="button" class="btn btn-success" [routerLink]="['/trabajador/crear_solicitud']">CREAR SOLICITUD</button>
+
+
+    </nav>
+
+</section>

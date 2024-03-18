@@ -1,0 +1,78 @@
+.carousel-item {
+    background-size: cover;
+    /* Ensures the background image covers the entire item */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    background-position: center center;
+    /* Centers the image horizontally and vertically */
+    min-height: 130vh;
+    /* Adjust this as needed for the desired height */
+}
+
+.slide-1 {
+    background-image: url("../../../../assets/recursos/imagenes/general/carousel/idc.brightspotcdn.jpeg");
+}
+
+.slide-2 {
+    background-image: url("../../../../assets/recursos/imagenes/general/carousel/istockphoto-1157293038-612x612.jpg");
+}
+
+.slide-3 {
+    background-image: url("../../../../assets/recursos/imagenes/general/carousel/LeaveWizard2.jpg");
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: green;
+}
+
+.carousel-indicators button {
+    background-color: black;
+}
+
+.container {
+    font-size: large;
+}
+
+#info {
+    background-color: #00aec1;
+    height: 100vh;
+}
+
+#trabajo {
+    background-color: #fadbb9;
+    height: 35vh;
+}
+
+.img-pagos {
+    width: 150px;
+    height: 150px;
+}
+
+@media screen and (max-width:700px)and (min-width:520px) {
+    #trabajo {
+        background-color: #fadbb9;
+        height: 50vh;
+    }
+    #info {
+        height: 185vh;
+    }
+}
+
+@media screen and (max-width:519px) {
+    .container {
+        font-size: small;
+    }
+    #trabajo {
+        height: 50vh;
+    }
+    #info {
+        height: 150vh;
+    }
+}
+
+@media screen and (max-width:4500px) and (min-width:1500px) {
+    .container {
+        font-size: 1.7rem;
+    }
+}

@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div class="app">
+
+    <h1 class="text-center titulo"> Departamentos</h1>
+    <div class="d-grid gap-2 col-6 mx-auto justify-content-md-end">
+        <button class="btn btn-success" (click)="guardarDepartamento()">AGREGAR DEPARTAMENTO</button>
+    </div>
+    <a class="link" [routerLink]="['/super/inicio']"> <img src="../../../../assets/recursos/imagenes/general/regresar.svg" class="regresar"> Regresar</a>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-*-*">
+            <div class="table-responsive mt-5" style="margin-left: 10%;">
+                <table class="table table-striped table-bordered text-center" style="width: 80%;">
+                    <thead>
+                        <tr>
+                            <th class="th" scope="col">Departamento</th>
+                            <th class="th" scope="col">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tr" *ngFor="let departamento of departamentos">
+                            <th scope="row" [ngStyle]="{
+                                'display': departamento.nombre === 'sin departamento' ? 'none' : 'table-cell',
+                                'background-color': departamento.nombre === 'sin departamento' ? 'transparent' : '#00aec1',
+                                'color': departamento.nombre === 'sin departamento' ? 'transparent' : 'white'
+                              }">{{departamento.nombre}}</th>
+                            <td [ngStyle]="{
+                                'display': departamento.nombre === 'sin departamento' ? 'none' : 'table-cell'}">
+                                <a type="button" class="td btn button text-white" (click)="borrarDepartamento(departamento.id)">Eliminar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item" *ngFor="let i of paginasArray"><a class="page-link" [ngStyle]="pagina_actual === i ? {'background-color': '#fadbb9', 'color': 'black'} : {'background-color': '#00aec1', 'color': 'white'}" (click)="getDepartamentos(i)">{{i}}</a></li>
+
+            </ul>
+        </nav>
+    </div>
+</div>

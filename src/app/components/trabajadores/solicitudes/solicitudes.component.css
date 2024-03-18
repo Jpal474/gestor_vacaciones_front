@@ -1,0 +1,48 @@
+.button {
+    background-color: #d89323;
+    color: white;
+}
+
+.button-red {
+    background-color: #8c0b0a;
+    color: white;
+}
+
+.th {
+    background-color: #fadbb9;
+    color: black;
+}
+
+.filtro {
+    /* 2 píxeles de ancho, estilo discontinuo (dashed), color azul */
+    padding: 10px;
+    display: inline-block;
+    background-color: #00aec1;
+    color: white;
+}
+
+.regresar {
+    width: 30px;
+    height: 30px;
+}
+
+@media screen and (max-width:500px) {
+    .button {
+        margin-bottom: 10px;
+    }
+    table {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width:501px) and (max-width:899px) {
+    .button {
+        margin-top: 3px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    table {
+        width: 85vw;
+    }
+}

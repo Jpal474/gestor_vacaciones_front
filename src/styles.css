@@ -1,0 +1,98 @@
+.titulo {
+    color: white;
+    margin-top: 5rem;
+}
+
+.link {
+    color: #FFFEE7;
+}
+
+full-calendar {
+    position: absolute;
+    top: 8%;
+    width: 70vw;
+    height: 85vh;
+    color: white;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width:700px) {
+    .titulo {
+        color: black;
+    }
+}
+
+@media screen and (max-width: 809px) and (min-width:200px) {
+    full-calendar {
+        top: 10%;
+        transform: translate(5%, -182%);
+        width: 85vw;
+        height: 63vh;
+        font-size: small;
+        margin-top: 5.5rem;
+        color: black;
+        position: relative;
+        margin-bottom: 20px;
+        left: -5%
+    }
+    full-calendar .fc-next-button,
+    full-calendar .fc-prev-button,
+    full-calendar .fc-dayGridMonth-button,
+    full-calendar .fc-timeGridDay-button,
+    full-calendar .fc-timeGridWeek-button {
+        width: 35px;
+        height: 50px;
+        font-size: small !important;
+    }
+    full-calendar .fc-timeGridWeek-button {
+        content: " ";
+    }
+    full-calendar .fc-icon {
+        width: 5px;
+        height: 5px;
+    }
+    full-calendar .fc-header-toolbar {
+        font-size: small !important;
+    }
+    .legend-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        min-height: 100vh;
+        margin-top: 110px;
+    }
+    .legend-box {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        width: 80vw;
+        height: 30vh;
+    }
+    .color-box {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        display: block;
+        margin-right: 10px;
+    }
+    .box-title {
+        font-size: 0.9rem;
+        position: relative;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 1500px) and (min-width: 810px) {
+    full-calendar {
+        margin-left: 6.5rem;
+        color: black;
+    }
+}
+
+@media screen and (max-height: 1500px) and (min-height:1200px) {
+    full-calendar {
+        color: black;
+    }
+}

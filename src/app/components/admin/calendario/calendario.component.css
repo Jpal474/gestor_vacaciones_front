@@ -1,0 +1,44 @@
+        .legend-container {
+            margin-top: 100px;
+        }
+        
+        .legend-box {
+            border: 1px solid #ccc;
+            width: 150px;
+            padding: 10px;
+            margin: 10px;
+            position: relative;
+            top: 10%;
+            background-color: white;
+        }
+        
+        .color-box {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .red-box {
+            background-color: #007ad9;
+        }
+        
+        .blue-box {
+            background-color: #330036;
+        }
+        
+        .green-box {
+            background-color: #2F4858;
+        }
+        
+        .yellow-box {
+            background-color: #27a082
+        }
+        
+        .purple-box {
+            background-color: #378006;
+        }
+        
+        .box-title {
+            font-size: 0.9rem;
+        }

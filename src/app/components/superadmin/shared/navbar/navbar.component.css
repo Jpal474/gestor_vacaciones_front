@@ -1,0 +1,22 @@
+.navbar {
+    background-color: #27a082;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.navbar-toggler {
+    background-color: white;
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
+@media screen and (max-width:800px) {
+    .img-nav {
+        width: 35px;
+        height: 35px;
+    }
+}

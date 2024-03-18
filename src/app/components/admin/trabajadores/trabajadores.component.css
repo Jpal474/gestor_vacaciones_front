@@ -1,0 +1,95 @@
+.button {
+    background-color: #d89323;
+    color: white;
+}
+
+.button-red {
+    background-color: #8c0b0a;
+    color: white;
+}
+
+.img-button {
+    width: 20px;
+    height: 20px;
+}
+
+.th {
+    background-color: #fadbb9;
+    color: black;
+}
+
+td {
+    background-color: #00aec1;
+    color: white;
+}
+
+.regresar {
+    width: 30px;
+    height: 30px;
+}
+
+.one {
+    width: 42%;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.one:hover .tooltip-text-one {
+    visibility: visible;
+}
+
+.tooltip-text-one {
+    visibility: hidden;
+    background-color: #00aec1;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.tooltip-text-one::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+}
+
+@media screen and (max-width: 750px) {
+    table {
+        width: 30vw;
+    }
+    .btn {
+        margin-bottom: 10px;
+        font-size: small;
+    }
+    .one {
+        width: 82%;
+    }
+    .btn {
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width:2500px) and (min-width:751px) {
+    .btn {
+        margin-bottom: 10px;
+        font-size: medium;
+    }
+    #estado {
+        margin-top: 2px;
+    }
+    .one {
+        width: 30%;
+    }
+}

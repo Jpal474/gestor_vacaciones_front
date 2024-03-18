@@ -1,0 +1,36 @@
+<div class="home">
+    <app-header2></app-header2>
+    <div class="container  ms-5">
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title text-center">Ingrese los Datos</h5>
+                <br>
+                <form autocomplete="off" [formGroup]="contrasenia_formulario">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="input-box ms-5 me-5">
+                                <span class="icon" (click)="toggleFieldTextType()"><img
+                                [src]="fieldTextType? '../../../../../assets/recursos/imagenes/superadmin/generales/ocultar.svg' : '../../../../../assets/recursos/imagenes/superadmin/generales/mostrar.svg' "
+                                class="img-small"
+                                ></span>
+                                <input [type]=" fieldTextType ? 'text' : 'password'" formControlName="contraseña" [class.is-invalid]="contraseniaNoValido" required>
+                                <label>Contraseña</label>
+                                <small class="text-danger" *ngIf="contraseniaNoValido"> {{contraseniaNoValido}} </small>
+
+                            </div>
+                            <div class="input-box ms-5" id="confirmar">
+                                <span class="icon" (click)="toggleFieldTextType2()"><img
+                                [src]="fieldTextType2? '../../../../../assets/recursos/imagenes/superadmin/generales/ocultar.svg' : '../../../../../assets/recursos/imagenes/superadmin/generales/mostrar.svg' "
+                                class="img-small"></span>
+                                <input [type]=" fieldTextType2 ? 'text' : 'password'" formControlName="confirmar_contraseña" [class.is-invalid]="confirmarContraseniaNoValida" required>
+                                <label>Confirmar Contraseña</label>
+                                <small class="text-danger" *ngIf="confirmarContraseniaNoValida"> Las contraseñas deben coincidir </small>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn" (click)="guardar()">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>

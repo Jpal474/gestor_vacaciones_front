@@ -1,0 +1,100 @@
+<h1 class="text-center titulo"> Editar Empleado</h1>
+<div class="d-grid gap-2 col-6 mx-auto justify-content-md-end">
+    <a class="btn btn-success text-white" style="background-color: green;" id="dias" (click)="actualizarSaldoVacacional()">ACTUALIZAR DIAS VACACIONALES</a>
+</div>
+<a class="link" [routerLink]="['/super/inicio']"> <img src="../../../../assets/recursos/imagenes/general/regresar.svg" class="regresar"> Regresar</a>
+
+<div class="container ms-5 ">
+    <div class="card mt-3 mb-5">
+        <div class="card-body">
+            <h5 class="card-title text-center">Datos del Empleado</h5>
+            <br>
+            <form autocomplete="off" [formGroup]="empleado_formulario">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="input-box me-5 ms-5">
+                            <span class="icon"></span>
+                            <input type="text" formControlName="nombre" [class.is-invalid]="nombreNoValido" required>
+                            <label>Nombre</label>
+                            <small *ngIf="nombreNoValido" class="text-danger"> {{nombreNoValido}} </small>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"></span>
+                            <input type="text" formControlName="apellidos" [class.is-invalid]="apellidosNoValidos" required>
+                            <label>Apellidos</label>
+                            <small class="text-danger" *ngIf="apellidosNoValidos"> {{apellidosNoValidos}} </small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-box me-5 ms-5">
+                            <span class="icon"></span>
+                            <input type="text" formControlName="nombre_usuario" required>
+                            <label>Nombre de Usuario</label>
+                            <small class="text-danger" *ngIf="nombreUsuarioNoValido"> {{nombreUsuarioNoValido}} </small>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"></span>
+                            <input type="text" formControlName="correo" [class.is-invalid]="correoNoValido" required>
+                            <label>Correo</label>
+                            <small class="text-danger" *ngIf="correoNoValido"> {{correoNoValido}} </small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-box ms-5">
+                            <span class="icon"></span>
+                            <input type="text" disabled>
+                            <label>Genero</label>
+                        </div>
+                        <select class="form-select" aria-label="Default select example" formControlName="genero" [class.is-invalid]="generoNoValido">
+                        <option selected disabled>-Elija Un Género-</option>
+                        <option value="FEMENINO">FEMENINO</option>
+                        <option value="MASCULINO">MASCULINO</option>
+                        <option value="OTRO">OTRO</option>
+                      </select>
+                        <small class="text-danger" *ngIf="generoNoValido"> {{generoNoValido}} </small>
+                    </div>
+                    <div class="row">
+                        <div class="input-box ms-5">
+                            <span class="icon"></span>
+                            <input type="text" required name="nombre" disabled>
+                            <label>Departamento</label>
+                        </div>
+                        <select class="form-select" aria-label="Default select example" formControlName="departamento" [class.is-invalid]="departamentoNoValido">
+                        <option selected disabled>-Elija Un Departamento-</option>
+                        <option *ngFor="let departamento of departamentos" [ngStyle]="{
+                            'display': departamento.nombre === 'sin departamento' ? 'none' : 'block'}" value={{departamento.id}}>{{departamento.nombre | uppercase}}</option>
+                      </select>
+                        <small class="text-danger" *ngIf="departamentoNoValido"> {{departamentoNoValido}} </small>
+                    </div>
+                    <div class="input-box ms-5" id="fecha">
+                        <input type="date" class="form-control shadow-none" formControlName="fecha_contratacion" [class.is-invalid]="fechaNoValida">
+
+                        <label>Fecha Contratacion<span>*</span></label>
+                        <small class="text-danger" *ngIf="fechaNoValida">{{fechaNoValida}}</small>
+                    </div>
+                    <div class="row">
+                        <div class="input-box ms-5">
+                            <input [type]=" fieldTextType ? 'text' : 'password'" formControlName="contraseña" [class.is-invalid]="contraseniaNoValido">
+                            <label>Contraseña</label>
+                            <span class="icon" (click)="toggleFieldTextType()"><img
+                                [src]="fieldTextType? '../../../../../assets/recursos/imagenes/superadmin/generales/ocultar.svg' : '../../../../../assets/recursos/imagenes/superadmin/generales/mostrar.svg' "
+                                width="20px" 
+                                height="20px"></span>
+                            <small class="text-danger" *ngIf="contraseniaNoValido"> El campo no puede estar vacío </small>
+                        </div>
+                        <div class="input-box ms-5">
+                            <input [type]=" fieldTextType2 ? 'text' : 'password'" formControlName="confirmar_contraseña" [class.is-invalid]="confirmarContraseniaNoValida">
+                            <label>Confirmar Contraseña</label>
+                            <span class="icon" (click)="toggleFieldTextType2()"><img
+                                [src]="fieldTextType2? '../../../../../assets/recursos/imagenes/superadmin/generales/ocultar.svg' : '../../../../../assets/recursos/imagenes/superadmin/generales/mostrar.svg' "
+                                width="20px" 
+                                height="20px"></span>
+                            <small class="text-danger" *ngIf="confirmarContraseniaNoValida"> Las contraseñas deben coincidir </small>
+                        </div>
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="confirmarActulizacion()">Guardar</button>
+            </form>
+        </div>
+    </div>

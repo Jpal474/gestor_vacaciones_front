@@ -1,0 +1,54 @@
+<nav class="navbar fixed-top">
+    <div class="container-fluid">
+        <a [routerLink]="['/super/inicio']"><img src="../../../../../assets/recursos/imagenes/superadmin/home/puesta-de-sol.png" class="img-nav"></a>
+        <a class="navbar-brand" [routerLink]="['/super/inicio']">Vacation Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: #27a082; color: white;">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Vacation Manager </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" [routerLink]="['/super/inicio']" style="color: white;">
+                            <img src="../../../../../assets/recursos/imagenes/superadmin/home/hogar.png" class="me-1" width="15px" height="15px"> Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/super/departamentos']" style="color: white;">
+                            <img src="../../../../../assets/recursos/imagenes/superadmin/home/departamento.png" width="15px" height="15px" class="me-1"> Departamentos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/super/empleados']" style="color: white;">
+                            <img src="../../../../../assets/recursos/imagenes/superadmin/home/trabajo-en-equipo.png" width="15px" height="15px" class="me-1"> Empleados
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/super/solicitudes']" style="color: white;">
+                            <img src="../../../../../assets/recursos/imagenes/superadmin/home/permiso.png" width="15px" height="15px" class="me-1"> Solicitudes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/super/calendario']" style="color: white;">
+                            <img src="../../../../../assets/recursos/imagenes/superadmin/home/calendario.png" width="15px" height="15px" class="me-1"> Calendario
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/super/cuenta']" style="color: white;">
+                            <img src="../../../../assets/recursos/imagenes/superadmin/home/usuario(2).png" class="me-1" height="10px" width="10px"> Cuenta
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" style="color: white;" (click)="logout()">
+                            <img src="../../../../../assets/recursos/imagenes/superadmin/home/salida.png" width="15px" height="15px" class="me-1"> Cerrar Sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
